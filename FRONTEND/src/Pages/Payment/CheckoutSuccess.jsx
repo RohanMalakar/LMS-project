@@ -1,11 +1,11 @@
 
 
 import React, { useEffect } from "react";
-import Homelayout from "../../Layouts/Homelayout";
+import Homelayout from "../../Layouts/Homelayout.jsx";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { GetUserProfile } from "../../Redux/Slices/AuthSlices";
+import { GetUserProfile } from "../../Redux/Slices/AuthSlices.js";
 
 const CheckoutSuccess = () => {
 

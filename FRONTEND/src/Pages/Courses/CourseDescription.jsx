@@ -1,7 +1,7 @@
 import {  useLocation, useNavigate, useParams } from "react-router-dom"
-import Homelayout from "../../Layouts/Homelayout"
+import Homelayout from "../../Layouts/Homelayout.jsx"
 import { useDispatch, useSelector } from "react-redux";
-import { removeCourseMethod } from "../../Redux/Slices/CourseSlices";
+import { removeCourseMethod } from "../../Redux/Slices/CourseSlices.js";
 
 
 

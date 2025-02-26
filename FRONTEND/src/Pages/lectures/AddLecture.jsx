@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import Homelayout from "../../Layouts/Homelayout";
+import Homelayout from "../../Layouts/Homelayout.jsx";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import { UploadLectures } from "../../Redux/Slices/LectureSlice";
+import { UploadLectures } from "../../Redux/Slices/LectureSlice.js";
 
 function AddLecture() {
   const dispatch = useDispatch();

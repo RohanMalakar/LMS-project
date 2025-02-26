@@ -1,13 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
-import Homelayout from "../../Layouts/Homelayout"
+import Homelayout from "../../Layouts/Homelayout.jsx";
 import { Chart as ChartJS,ArcElement,Tooltip, Legend,CategoryScale,LinearScale,BarElement,Title} from "chart.js"
 import {FaUsers} from "react-icons/fa";
 import {Bar, Pie} from "react-chartjs-2"
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { GetStats } from "../../Redux/Slices/StatSlice";
-import { getPaymentRecord } from "../../Redux/Slices/RazorpaySlice";
-import { GetAllCourses, removeCourseMethod } from "../../Redux/Slices/CourseSlices";
+import { GetStats } from "../../Redux/Slices/StatSlice.js";
+import { getPaymentRecord } from "../../Redux/Slices/RazorpaySlice.js";
+import { GetAllCourses, removeCourseMethod } from "../../Redux/Slices/CourseSlices.js";
 import { BsCollectionPlayFill, BsTrash } from "react-icons/bs";
 
 

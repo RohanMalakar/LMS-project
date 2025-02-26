@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { GetUserProfile } from "../../Redux/Slices/AuthSlices";
-import Homelayout from "../../Layouts/Homelayout";
+import { GetUserProfile } from "../../Redux/Slices/AuthSlices.js";
+import Homelayout from "../../Layouts/Homelayout.jsx";
 import { Link } from "react-router-dom";
-import { cancelSubscribe } from "../../Redux/Slices/RazorpaySlice";
+import { cancelSubscribe } from "../../Redux/Slices/RazorpaySlice.js";
 
 function Profile() {
   const dispatch = useDispatch();

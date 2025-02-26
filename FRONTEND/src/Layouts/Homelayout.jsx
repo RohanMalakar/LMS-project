@@ -2,7 +2,7 @@ import React from "react";
 import { IoMenu } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
 import { ImCross } from "react-icons/im";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutmethod } from "../Redux/Slices/AuthSlices.js";
 import gif7 from "../assets/Images/gif7.gif"

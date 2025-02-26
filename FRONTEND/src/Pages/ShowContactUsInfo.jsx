@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import axiosInstance from "../Hellers/axiosinstance";
-import Homelayout from "../Layouts/Homelayout";
+import axiosInstance from "../Hellers/axiosinstance.js";
+import Homelayout from "../Layouts/Homelayout.jsx";
 
 const ShowContactUsInfo = () => {
   const [data, setData] = useState([]);

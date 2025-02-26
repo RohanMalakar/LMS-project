@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { useDispatch } from "react-redux"; 
-import { AddQuiz } from '../../Redux/Slices/QuizSlices';
-import Homelayout from '../../Layouts/Homelayout';
-import QuizPublished from '../Pop_upMessage';
+import { AddQuiz } from '../../Redux/Slices/QuizSlices.js';
+import Homelayout from '../../Layouts/Homelayout.jsx';
+import QuizPublished from '../Pop_upMessage.jsx';
 
 
 const AddQuizForm = () => {

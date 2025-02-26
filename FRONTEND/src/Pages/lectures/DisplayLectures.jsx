@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import Homelayout from "../../Layouts/Homelayout";
+import Homelayout from "../../Layouts/Homelayout.jsx";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import {
   GetAllCourseLectures,
   RemoveLecture,
-} from "../../Redux/Slices/LectureSlice";
-import { GetAllQuizzesOfCourse, RemoveQuiz } from "../../Redux/Slices/QuizSlices";
+} from "../../Redux/Slices/LectureSlice.js";
+import { GetAllQuizzesOfCourse, RemoveQuiz } from "../../Redux/Slices/QuizSlices.js";
 
 function DisplayLectures() {
   const dispatch = useDispatch();

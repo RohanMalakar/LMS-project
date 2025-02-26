@@ -1,13 +1,13 @@
 import { useRef, useState } from "react";
-import Homelayout from "../Layouts/Homelayout";
+import Homelayout from "../Layouts/Homelayout.jsx";
 import { BsPersonCircle } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
-import { createAccount } from "../Redux/Slices/AuthSlices";
+import { createAccount } from "../Redux/Slices/AuthSlices.js";
 import gif2 from "../assets/Images/gif2.gif"; // Adjust the path as needed.
-import axiosInstance from "../Hellers/axiosinstance";
-import Otp from "../components/Otp";
+import axiosInstance from "../Hellers/axiosinstance.js";
+import Otp from "../components/Otp.jsx";
 
 function SignUp() {
   const dispatch = useDispatch();

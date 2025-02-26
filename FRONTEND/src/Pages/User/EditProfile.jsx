@@ -1,11 +1,11 @@
 import toast from "react-hot-toast"
 import { useDispatch, useSelector } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
-import Homelayout from "../../Layouts/Homelayout"
+import Homelayout from "../../Layouts/Homelayout.jsx"
 import { useState } from "react"
 import { BsPersonCircle } from "react-icons/bs"
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import { GetUserProfile, updateProfile } from "../../Redux/Slices/AuthSlices"
+import { GetUserProfile, updateProfile } from "../../Redux/Slices/AuthSlices.js"
 
 
 

@@ -7,7 +7,7 @@ import EmojiPicker from 'emoji-picker-react';
 import { GrEmoji } from "react-icons/gr";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { VscSend } from "react-icons/vsc";
-import { GetAllChat } from "../Redux/Slices/ChatSlices";
+import { GetAllChat } from "../Redux/Slices/ChatSlices.js";
 
 
 

@@ -5,9 +5,9 @@ import {
   getRazorpayId,
   purchaseCourse,
   verifyUserPayment,
-} from "../../Redux/Slices/RazorpaySlice";
+} from "../../Redux/Slices/RazorpaySlice.js";
 import toast from "react-hot-toast";
-import Homelayout from "../../Layouts/Homelayout";
+import Homelayout from "../../Layouts/Homelayout.jsx";
 import { BiRupee } from "react-icons/bi";
 
 function Checkout() {

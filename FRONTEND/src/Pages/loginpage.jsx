@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Homelayout from "../Layouts/Homelayout";
+import Homelayout from "../Layouts/Homelayout.jsx";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
-import { Loginmethod } from "../Redux/Slices/AuthSlices";
+import { Loginmethod } from "../Redux/Slices/AuthSlices.js";
 import gif5 from "../assets/Images/gif5.gif";
 
 function Login() {

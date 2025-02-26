@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import { Navigate, Outlet } from "react-router-dom"
-import { GetUserProfile } from "../Redux/Slices/AuthSlices"
+import { GetUserProfile } from "../Redux/Slices/AuthSlices.js"
 import { useEffect } from "react"
 
 

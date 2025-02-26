@@ -3,7 +3,7 @@ import React from "react";
 import Homelayout from "../Layouts/Homelayout.jsx";
 import AboutImage from "../assets/Images/aboutMainImage.png";
 import Slides from "../components/carouselSlides.jsx";
-import { arr } from "../constants/AboutpageContants";
+import { arr } from "../constants/AboutpageContants.jsx";
 import gif3 from "../assets/Images/gif3.gif"; // Adjust path as necessary
 import rohan from "../assets/Images/rohan.jpg"; // Adjust path as necessary
 import braj from "../assets/Images/brajraj.png"; // Adjust path as necessary

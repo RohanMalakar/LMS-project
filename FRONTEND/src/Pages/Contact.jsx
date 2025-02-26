@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Homelayout from "../Layouts/Homelayout";
+import Homelayout from "../Layouts/Homelayout.jsx";
 import toast from "react-hot-toast";
-import axiosInstance from "../Hellers/axiosinstance";
+import axiosInstance from "../Hellers/axiosinstance.js";
 
 function Contact() {
   const [inputText, setInputText] = useState({
