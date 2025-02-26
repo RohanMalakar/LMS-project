@@ -82,8 +82,7 @@ const register = async function (req, res, next) {
   res.cookie("token", token, cookieOptions);
   
   const messageHTML=generateWelcomeEmailHTML(user.fullName);
-
-      try {
+    try {
         await sendMail({
             email:user.email,
             subject:"Registration confirmation Email",
@@ -91,7 +90,7 @@ const register = async function (req, res, next) {
         });
     } catch (error) {
         console.log("error",error);
-    }
+  }
 
   return res.status(202).json({
     success: true,

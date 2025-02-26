@@ -6,6 +6,7 @@ import rayzorpaySliceReducer from "./Slices/RazorpaySlice.js"
 import LectureSliceReducer from "./Slices/LectureSlice.js"
 import StatSliceReducer from "./Slices/StatSlice.js"
 import QuizSliceReducer from "./Slices/QuizSlices.js"
+import ChatSliceReducer from "./Slices/ChatSlices.js"
 
 const store=configureStore({
    reducer:{
@@ -14,7 +15,8 @@ const store=configureStore({
       razorpay:rayzorpaySliceReducer,
       lecture:LectureSliceReducer,
       stat:StatSliceReducer,
-      quiz:QuizSliceReducer
+      quiz:QuizSliceReducer,
+      chat:ChatSliceReducer
    },
    devTools:true
 })

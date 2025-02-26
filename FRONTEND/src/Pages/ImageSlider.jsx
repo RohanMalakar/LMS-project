@@ -10,7 +10,7 @@ import rohitsir from '../assets/Images/rohitsir.jpg';
 import khushboomaam from '../assets/Images/khushboomaam.jpg';
 
 const Carousel = () => {
-    const slides = [prafulasir, jigyasamaam,deveshsir, manishsir];
+    const slides = [deveshsir, manishsir];
     const [currentIndex, setCurrentIndex] = useState(0);
     const autoSlideInterval = 3000; // Auto-slide interval in ms
 

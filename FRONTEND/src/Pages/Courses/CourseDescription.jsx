@@ -53,7 +53,6 @@ function CourseDescription() {
                     }
                  </div>
               </div>
-
           </div>
           <div className="space-y-3 text-xl  w-[60%]">
              <h1 className="text-3xl  font-bold text-teal-500 mb-5">

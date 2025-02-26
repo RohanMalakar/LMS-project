@@ -54,6 +54,13 @@ function Homelayout({ children }) {
                 <span className="text-lg font-bold hover:text-teal-300 ">About</span>
               </Link>
           </li>
+          {isLoggedIn && (
+              <li>
+                <Link to={"/chat/community"}>
+                  <span className="text-lg font-bold hover:text-teal-300  ">Community Chat</span>
+                </Link>
+              </li>
+          )}
           {isLoggedIn && role == "ADMIN" && (
               <li>
                 <Link to={"/admin/dashboard"}>

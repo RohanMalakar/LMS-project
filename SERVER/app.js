@@ -9,10 +9,13 @@ import paymentRoute from "./routers/payment.routs.js";
 import mescellaniousRoute from "./routers/miscellaneous.js";
 import quizRouter from "./routers/quiz.route.js";
 import { Server } from "socket.io";
-import { createServer } from "http";
+import http from "http";
+import emailRouter from "./routers/email.route.js";
+import {createChat} from "./controllers/chat.controller.js";
+import chatRouter from "./routers/chat.route.js";
 
 const app=express();
- 
+const server = http.createServer(app);
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(cookieParser());
@@ -29,9 +32,6 @@ app.use((req, res, next) => {
   next();
 });
 app.use(express.urlencoded({extended:true,limit:"16kb"}));
-app.use(express.static("public"));
-
-
 
 
 app.use("/api/v1/data/",mescellaniousRoute);
@@ -39,6 +39,8 @@ app.use("/api/v1/user/",userRoute);
 app.use("/api/v1/payment/",paymentRoute);
 app.use("/api/v1/courses/",courseRoute);
 app.use("/api/v1/quizzes/",quizRouter);
+app.use("/api/v1/email/",emailRouter);
+app.use("/api/v1/chat/",chatRouter);
 
 app.use("/",(req,res)=>{
   res.send("Hey I am rohan malakar")   
@@ -52,32 +54,32 @@ app.all("*",(req,res,next)=>{
 
 app.use(errorMiddleware)
 
-const server = createServer(app);
 const io = new Server(server, {
-  cors: {
-    origin: "http://localhost:5174/chat/community", // Adjust based on your frontend URL
-    methods: ["GET", "POST"],
-    credentials: true,
-  },
+  cors: { origin: "http://localhost:5173", methods: ["GET", "POST"] },
 });
 
-// WebSocket Logic
 io.on("connection", (socket) => {
-  console.log("A user connected:", socket.id);
+  console.log(`a user connected ${socket.id}`);
 
-  // Listen for incoming messages
-  socket.on("send_message", (data) => {
-    console.log("Message received:", data);
-
-    // Broadcast message to all clients
-    io.emit("receive_message", data);
+  socket.on("send_message", async (data) => {
+    try {
+      const response=await createChat(data);
+      if(response.success===false){
+        socket.emit("message_error", { message: "Failed to send message" });
+        return;
+      }
+      io.emit("receive_message", response);
+    } catch (error) {
+      console.error(error);
+      socket.emit("message_error", { message: "Failed to send message" });
+    }
   });
+});
 
-  // Handle user disconnect
-  socket.on("disconnect", () => {
-    console.log("A user disconnected:", socket.id);
-  });
+server.listen(4000, () => {
+  console.log("listening on *:4000");
 });
 
 
 export default app;
+export {io};
