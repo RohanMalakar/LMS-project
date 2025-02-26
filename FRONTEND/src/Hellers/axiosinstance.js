@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL="https://codescorer.onrender.com/api/v1"
+const BASE_URL="https://code-scorer.onrender.com/api/v1"
 
 const axiosInstance=axios.create();
 
