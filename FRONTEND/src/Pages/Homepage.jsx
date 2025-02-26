@@ -8,7 +8,7 @@ import { GetUserProfile } from '../Redux/Slices/AuthSlices.js';
 import TopEducator from "../Pages/TopEducator.jsx";
 import StudentsReviews from "../Pages/StudentsReviews.jsx";
 import SocialMedia from "../Pages/SocialMedia.jsx"; 
-import Carousel from "../Pages/imageSlider.jsx";
+import Carousel from "../Pages/ImageSlider.jsx";
 import { Typed } from 'react-typed';
 import gif3 from "../assets/Images/gif3.gif"; // Adjust path as necessary
 import Header from '../components/Header.jsx';
