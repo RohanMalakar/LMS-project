@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 
 // CORS Configuration
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "https://code-scorer.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type"],
   credentials: true,
