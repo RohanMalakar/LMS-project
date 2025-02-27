@@ -8,9 +8,10 @@ import crypto from "crypto";
 import generateWelcomeEmailHTML from "../utills/registrationSubmitionMessage.js";
 
 const cookieOptions = {
-  maxAge: 7 * 1000 * 60 * 60 * 24, 
+  maxAge: 7 * 24 * 60 * 60 * 1000, 
   httpOnly: true,
-  secure: true,
+  secure: true, // Secure only in production
+  sameSite: "None",
 };
 
 const register = async function (req, res, next) {
@@ -77,7 +78,6 @@ const register = async function (req, res, next) {
   }
   await user.save();
   user.password = undefined;
-  console.log(user);
   const token = await user.generateJWTtoken();
   res.cookie("token", token, cookieOptions);
   
@@ -110,7 +110,6 @@ const login = async (req, res, next) => {
   if (!user) {
     return next(new ApiError(409, "Unautherised access"));
   }
-  console.log(user);
   if (!(await user.comparePassword(password))) {
     return next(new ApiError(409, "Incorrect password"));
   }
@@ -285,7 +284,6 @@ const updateProfile = async (req, res, next) => {
             console.error('Error deleting file:', err);
             return next(err);
           }
-          console.log(`File ${req.file.filename} deleted from uploads folder.`);
         });
       }
     } catch (error) {

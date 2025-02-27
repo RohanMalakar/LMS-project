@@ -16,7 +16,6 @@ const initialState={
              }),
              error:"Failed to get quizzes"
           })
-          console.log((await response).data); 
           return (await response).data
       } catch (error) {
           toast.error(error?.response?.data?.message)
@@ -82,7 +81,6 @@ const initialState={
              }),
              error:"Failed to remove quiz"
           })
-          console.log((await response).data);
           return (await response).data
       } catch (error) {
           toast.error(error?.response?.data?.message)

@@ -15,7 +15,6 @@ function Otp({length=6,email,emailVerified,setshowVerificationPage}) {
   }
   function handleResendOtp() {
     generatedOtp.current=Math.floor(100000 + Math.random() * 900000).toString();
-    console.log(generatedOtp.current);
     if(!email)return;
     const data={
        email:email,
@@ -59,7 +58,6 @@ function Otp({length=6,email,emailVerified,setshowVerificationPage}) {
 
   async function handleSendOtp() {
     generatedOtp.current=Math.floor(100000 + Math.random() * 900000).toString();
-    console.log(generatedOtp.current);
     if(!email)return;
     const data={
        email:email,

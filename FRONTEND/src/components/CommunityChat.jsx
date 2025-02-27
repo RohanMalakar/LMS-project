@@ -29,10 +29,8 @@ const Chat = () => {
 
     const handleReceiveMessage = (data) => {
       if(data.success===false){
-        console.log("Failed to send message",data.message);
         return;
       }
-      console.log("rceived message from the server" ,data);
       setChat((chat) => [...chat, data.data]);
     };
 
@@ -64,9 +62,7 @@ const Chat = () => {
   const getChats = async () => {
     try {
       const response =await dispatch(GetAllChat());
-      console.log(response?.payload);
       if (response?.payload.success === false) {
-        console.log("Failed to get chat", data);
         return;
       }
       setChat(response?.payload?.data);

@@ -58,7 +58,6 @@ const io = new Server(server, {
 });
 
 io.on("connection", (socket) => {
-  console.log(`a user connected ${socket.id}`);
 
   socket.on("send_message", async (data) => {
     try {

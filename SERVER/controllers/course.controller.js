@@ -43,7 +43,7 @@ const createCourse = async (req, res, next) => {
   if (!title || !description || !category || !createdBy) {
     return next(new ApiError(409, "Every field is required"));
   }
- console.log(title, description, category, createdBy);
+ 
 
   const course = await Course.create({
     title,
@@ -86,7 +86,6 @@ const createCourse = async (req, res, next) => {
               console.error('Error deleting file:', err);
               return next(err);
             }
-            console.log(`File ${req.file.filename} deleted from uploads folder.`);
           });
         }
       }

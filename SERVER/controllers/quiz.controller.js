@@ -91,7 +91,6 @@ const getAllQuiz=async function(req,res,next){
 const submitQuiz=async function(req,res,next){
     const {userId,quizId,score,selectedOptions}=req.body;
     
-    console.log("userId,quizId,score,selectedOptions",userId,quizId,score,selectedOptions);
     if (!quizId || !selectedOptions || !userId) {
         return next(new ApiError(400,"Quiz id, score, selected options and userId are required"));
     }
