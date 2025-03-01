@@ -139,7 +139,9 @@ const profile = async (req, res, next) => {
   try {
     const userId = req.user.id;
     const user = await User.findById(userId);
-
+    if(!user){
+      return next(new ApiError(404,"User not found"));
+    }
     res.status(202).json({
       success: true,
       message: " this is user Details",
