@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
 
 const sendMail = async function ({email, subject, messageHTML}) {
-    console.log("email, subject, messageHTML",email, subject, messageHTML);
+    
   try {
     // Create the transporter
     const auth = nodemailer.createTransport({

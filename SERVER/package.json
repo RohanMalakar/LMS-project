@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "npm install",
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "author": "Rohan Malakar",
   "license": "ISC",

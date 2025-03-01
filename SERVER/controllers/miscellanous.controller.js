@@ -24,7 +24,6 @@ export const contactUs = async (req, res, next) => {
     data: contact,
   });
 };
-
 export const getcontactUs = async (req, res, next) => {
   const contact = await ContactUs.find();
   res.status(200).json({
@@ -33,7 +32,6 @@ export const getcontactUs = async (req, res, next) => {
     data: contact,
   });
 };
-
 export const userStats = async (req, res, next) => {
   try {
     const allUsersCount = await User.countDocuments();

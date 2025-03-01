@@ -50,7 +50,6 @@ export default function App() {
         </Route>
         <Route element={<RequireAuth allowedRoles={["ADMIN","USER"]}/>}>
             <Route path='/user/profile' element={<Profile/>}/>
-            
             <Route path='/quiz/:quizId/attempt' element={<DisplayQuiz/>}/>
             <Route path='/user/editprofile' element={<EditProfile/>}/>
             <Route path='/checkout' element={<Checkout/>}/>

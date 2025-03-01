@@ -4,9 +4,9 @@ import axiosInstance from "../../Hellers/axiosinstance.js"
 import toast from "react-hot-toast";
 
 const initialState={
-  isLoggedIn:localStorage.getItem("isLoggedIn")|| false,
+  isLoggedIn:localStorage.getItem("isLoggedIn")=="true" || false,
   role:localStorage.getItem("role")|| "",
-  data:localStorage.getItem("data")||{}
+  data:localStorage.getItem("data") || {}
 }
 
 export const createAccount=createAsyncThunk("/auth/sigup", async (data)=>{
@@ -41,7 +41,6 @@ export const Loginmethod=createAsyncThunk("/auth/login", async (data)=>{
       toast.error(error?.message)
    }
 })
-
 export const logoutmethod=createAsyncThunk("auth/logout",async()=>{
 
      try {
@@ -65,7 +64,7 @@ export const GetUserProfile=createAsyncThunk("get/user/profile",async ()=>{
     const response=axiosInstance.get("/user/profile")
     return (await response).data
   } catch (error) {
-     toast.error(error.message)
+     console.log(error.message)
   }
   
 })
@@ -85,12 +84,11 @@ export const updateProfile=createAsyncThunk("user/updateProfile" ,async (data)=>
          error:"profile updation failed"
       }
       )
-        return ( await response).data
+        return (await response).data
      } catch (error) {
          toast.error(error.message)
      } 
 })
-
 const authSlice=createSlice({
   name:"authSlice",
   initialState,

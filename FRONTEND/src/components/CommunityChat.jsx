@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import io from "socket.io-client";
-const socket = io.connect("https://code-scorer.onrender.com");
+const socket = io.connect("https://code-scorer.onrender.com",
+ { 
+  path: "/socket.io",  
+  withCredentials: true,
+  transports: ["websocket", "polling"],
+}
+);
 import { MdAttachFile } from "react-icons/md";
 import EmojiPicker from 'emoji-picker-react';
 import { GrEmoji } from "react-icons/gr";

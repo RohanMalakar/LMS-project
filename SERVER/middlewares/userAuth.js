@@ -19,16 +19,13 @@ const isLoggedIn = async (req, res, next) => {
         return next(new ApiError(401, "Invalid or Expired Token"));
     }
 };
-
-
 const authrizedRoll= (...roles)=> async (req,res,next)=>{
        const currentUserRole=req.user.role ;   
        if (!roles.includes(currentUserRole)) {
            return next(new ApiError(400, "You do not have Permision Access this route"));              
        }
        next()
-    };
-
+};
 const authrizedSubscriber= async (req,res,next)=>{
        const user= await User.findById(req.user.id)
        const currentUserRole=user.role ;   
@@ -37,7 +34,7 @@ const authrizedSubscriber= async (req,res,next)=>{
         return next(new ApiError(400, "You do not have Permision Access this route"));
        }   
        next()
-}
+};
 
 export  {isLoggedIn,authrizedRoll,authrizedSubscriber};
     

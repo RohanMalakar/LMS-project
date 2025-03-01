@@ -40,7 +40,6 @@ const createChat = async (data) => {
   }
 };
 
-
 const deleteChat = async (req, res, next) => {
   const { chatId } = req.body;
   if (!chatId) {

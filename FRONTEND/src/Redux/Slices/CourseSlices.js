@@ -36,7 +36,6 @@ const initialState={
         toast.error(error?.response?.data?.message)
      }
  })
-
 export const CreateNewCourse=createAsyncThunk ("create/course", async (formData)=>{
    try {
 
@@ -55,8 +54,6 @@ export const CreateNewCourse=createAsyncThunk ("create/course", async (formData)
       toast.error(error?.message)
    }
 })
-
-
  const CourseSlice=createSlice({
   name:"CourseSlice",
   initialState,

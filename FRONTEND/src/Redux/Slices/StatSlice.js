@@ -7,7 +7,7 @@ const initialState={
    subscribedCount:0
 }
 
- export const GetStats=createAsyncThunk("/get/stats",async ()=>{
+export const GetStats=createAsyncThunk("/get/stats",async ()=>{
     try {
         const response=axiosInstance.get("data/admin/stats/users");
         toast.promise( response, {

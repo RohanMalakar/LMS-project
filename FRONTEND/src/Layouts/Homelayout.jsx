@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
 import { ImCross } from "react-icons/im";
@@ -9,27 +9,26 @@ import gif7 from "../assets/Images/gif7.gif"
 
 
 
+
 function Homelayout({ children }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const isLoggedIn = useSelector((state) => state?.auth?.isLoggedIn);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const isLoggedin=useSelector((state) => state?.auth?.isLoggedIn);
+  console.log(typeof isLoggedin);
   const role = useSelector((state) => state?.auth?.role);
-  function opensideBar() {
-    const bar = document.getElementsByClassName("drawer-side");
-    bar[0].style.width = "auto";
-  }
-  function hidedrower() {
-    const element = document.getElementsByClassName("drawer-toggle");
-    element[0].checked = false;
-  }
-  function handlelogout(e) {
+  async function handlelogout(e) {
     e.preventDefault();
-    const res = dispatch(logoutmethod());
+    const res = await dispatch(logoutmethod());
     
-    // if (res?.payload?.success) {
+    if (res?.payload?.success) {
       navigate("/");
-    // }
+     }
   }
+
+  useEffect(() => {
+    setIsLoggedIn(isLoggedin);
+  }, [isLoggedin]);
   return (
     <div className="min-w-[90vw] w-full  h-screen ">
       <header className="drawer fixed w-full bg-black  z-50 h-12">
@@ -89,27 +88,9 @@ function Homelayout({ children }) {
                 </Link>
               </li>
             )}
-          {!isLoggedIn && (
+          {isLoggedIn ? (
             <div className="absolute right-10 gap-6 flex">
-                  <li>
-                    <Link to={"/login"}>
-                      <span className="btn btn-sm btn-primary bg-teal-300">
-                        Login
-                      </span>
-                    </Link>
-                  </li>
-                 <li>
-                  <Link to={"/signup"}>
-                    <span className="btn btn-sm btn-primary bg-teal-300">
-                      Signup
-                    </span>
-                  </Link>
-                 </li>
-             </div>
-            )}
-          {isLoggedIn && (
-            <div className="absolute right-10 gap-6 flex">
-                  <li>
+                <li>
                     <Link to={"/user/profile"}>
                       <span className="btn btn-sm border-transparent btn-primary bg-teal-300 ">
                         Profile
@@ -124,7 +105,24 @@ function Homelayout({ children }) {
                   </Link>
                 </li>
              </div>
-            )}
+            ):
+            (<div className="absolute right-10 gap-6 flex">
+                <li>
+                  <Link to={"/login"}>
+                    <span className="btn btn-sm btn-primary bg-teal-300">
+                      Login
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                <Link to={"/signup"}>
+                  <span className="btn btn-sm btn-primary bg-teal-300">
+                    Signup
+                  </span>
+                </Link>
+                </li>
+               </div>)
+            }
         </ul>
       </header>
       {children}
