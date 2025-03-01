@@ -15,8 +15,9 @@ function Homelayout({ children }) {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const isLoggedin=useSelector((state) => state?.auth?.isLoggedIn);
-  console.log(typeof isLoggedin);
   const role = useSelector((state) => state?.auth?.role);
+  console.log("role",role);
+  console.log("isLoggedin",isLoggedin);
   async function handlelogout(e) {
     e.preventDefault();
     const res = await dispatch(logoutmethod());
