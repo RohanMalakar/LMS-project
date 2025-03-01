@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken"
 const isLoggedIn = async (req, res, next) => {
     try {
         // Check if cookies exist and extract the token
-        const token = req.cookies?.token;
+        const token = req.cookies?.token || req.headers?.authorization?.split(" ")[1];
         if (!token) {
             return next(new ApiError(401, "Unauthorized Access"));
         }

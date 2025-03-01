@@ -122,7 +122,7 @@ function Homelayout({ children }) {
                   </span>
                 </Link>
                 </li>
-               </div>)
+              </div>)
             }
         </ul>
       </header>

@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import io from "socket.io-client";
-const socket = io.connect("https://code-scorer.onrender.com",
+const socket = io.connect(
+  "https://code-scorer.onrender.com"
+   //"http://localhost:5000"
+   ,
  { 
   path: "/socket.io",  
   withCredentials: true,

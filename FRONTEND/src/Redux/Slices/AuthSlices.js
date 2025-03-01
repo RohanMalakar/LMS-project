@@ -97,9 +97,18 @@ const authSlice=createSlice({
   extraReducers:(builder)=>{
 
     builder.addCase(GetUserProfile.fulfilled,(state,action)=>{
-        localStorage.setItem("data",action?.payload?.data)
-        state.data=action?.payload?.data
-        state.role=action?.payload?.data?.role
+      console.log(action.payload.data.role)
+      localStorage.setItem("role",action?.payload?.data?.role)
+      localStorage.setItem("data",action?.payload?.data)
+     // state.data=action?.payload?.data
+      state.role=action?.payload?.data?.role
+    })
+
+    builder.addCase(GetUserProfile.rejected,(state,action)=>{
+      localStorage.setItem("role",action?.payload?.data?.role)
+      localStorage.setItem("data",action?.payload?.data)
+      state.data=action?.payload?.data
+      state.role=action?.payload?.data?.role
     })
    
     builder.addCase(createAccount.fulfilled,(state,action)=>{

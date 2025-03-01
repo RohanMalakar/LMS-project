@@ -10,7 +10,10 @@ userRoute.post("/login",login)
 userRoute.get("/logout",logout)
 userRoute.post("/forgot_password",forgotPassword)
 userRoute.post("/reset_password/:resetToken",resetPassword)
-userRoute.get("/profile",isLoggedIn,profile)
+userRoute.get("/profile",(req,res,next)=>{
+   console.log(req.cookies);
+   next()
+},isLoggedIn,profile)
 userRoute.post("/change_password",isLoggedIn,changePassword)
 userRoute.put("/update/profile",isLoggedIn,upload.single('avatar'),updateProfile)
 
