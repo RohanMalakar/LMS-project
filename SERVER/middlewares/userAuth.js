@@ -7,7 +7,7 @@ const isLoggedIn = async (req, res, next) => {
         // Check if cookies exist and extract the token
         const token = req.cookies?.token || req.headers?.authorization?.split(" ")[1];
         if (!token) {
-            return next(new ApiError(401, "Unauthorized Access"));
+            return next(new ApiError(401, "Cookies not found or Token not found"));
         }
 
         // Verify the token
