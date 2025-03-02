@@ -18,10 +18,10 @@ function SignUp() {
   const [showVerificationPage,setshowVerificationPage]=useState(false);
   const signUpDataLocal = JSON.parse(localStorage.getItem("signUpData"));
   const [signUpData, setSignUpData] = useState({
-    fullName: signUpDataLocal.fullName || "",
-    email: signUpDataLocal.email || "",
-    password: signUpDataLocal.password || "",
-    avatar: signUpDataLocal.avatar || "",
+    fullName: signUpDataLocal?.fullName || "",
+    email: signUpDataLocal?.email || "",
+    password: signUpDataLocal?.password || "",
+    avatar: signUpDataLocal?.avatar || "",
   });
   
 
