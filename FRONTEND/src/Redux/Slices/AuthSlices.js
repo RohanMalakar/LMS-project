@@ -61,7 +61,10 @@ export const logoutmethod=createAsyncThunk("auth/logout",async()=>{
 export const GetUserProfile=createAsyncThunk("get/user/profile",async ()=>{
   
   try {
-    const response=axiosInstance.get("/user/profile")
+    const response=axiosInstance.get("/user/profile",{
+      withCredentials:true,
+      headers:{"Content-Type":"application/json"}
+    })
     console.log(response);
     return (await response).data
   } catch (error) {
@@ -97,10 +100,9 @@ const authSlice=createSlice({
   extraReducers:(builder)=>{
 
     builder.addCase(GetUserProfile.fulfilled,(state,action)=>{
-      console.log(action.payload.data.role)
       localStorage.setItem("role",action?.payload?.data?.role)
       localStorage.setItem("data",action?.payload?.data)
-     // state.data=action?.payload?.data
+      state.data=action?.payload?.data
       state.role=action?.payload?.data?.role
     })
 
