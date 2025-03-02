@@ -63,8 +63,8 @@ function Otp({length=6,email,emailVerified,setshowVerificationPage}) {
        email:email,
        otp:generatedOtp
     }
-    // const response=await axiosInstance.post('/email/send',data)
-    // if(!response)return;
+     const response=await axiosInstance.post('/email/send',data)
+     if(!response)return;
     toast.success("OTP is sended successfully")
 }
   useEffect(() => {
